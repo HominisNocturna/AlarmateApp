@@ -1,0 +1,45 @@
+<App>
+	
+	<Router ux:Name="router" />
+
+	<!-- Class Objects -->
+	<Panel ux:Class="Box" Margin="10" >
+		<Rectangle Width="100%" Height="100%" Layer="Background" Color="White" CornerRadius="3"  >
+			<DropShadow Color="#00000060" Distance="1" Angle="90" Size="1" Spread="5"/>
+		</Rectangle>
+	</Panel>
+
+	<Panel ux:Class="BoxTitulo">
+		<Rectangle Width="100%" Height="100%" Layer="Background" Color="#022B5A"  >
+			<DropShadow Color="#00000060" Distance="1" Angle="90" Size="1" Spread="5"/>
+		</Rectangle>
+	</Panel>
+
+	<Panel ux:Class="BoxTituloSecundario">
+		<Rectangle Width="100%" Height="100%" Layer="Background" Color="#00BFFF"  >
+			<DropShadow Color="#00000060" Distance="1" Angle="90" Size="1" Spread="5"/>
+		</Rectangle>
+	</Panel>
+
+	<Font File="fonts/arial.ttf" ux:Global="DefaultFont" />
+	<Text ux:Class="Texto" TextWrapping="Wrap" Color="Black" Font="DefaultFont"/>
+
+	<DockPanel>
+		
+		<StatusBarBackground Dock="Top" Background="Black" />
+		<BottomBarBackground Dock="Bottom"  Background="Black" IncludesKeyboard="false"/>
+		<BottomFrameBackground IncludesKeyboard="false"/>
+
+			<Navigator DefaultTemplate="Login">
+				<LoginPage ux:Template="Login" router="router" />
+				<MainPage ux:Template="Main" router="router"/> 
+				<GuardViewPage ux:Template="GuardView" router="router" />
+				<AlertsViewPage ux:Template="AlertsView" router="router" />
+				<ConfigurationPage ux:Template="Configuration" router="router" />
+				<ContactSOSPage ux:Template="ContactSOSView" router="router" />
+				<RutesViewPage ux:Template="RutesView" router="router" />
+			</Navigator>
+
+	</DockPanel>
+</App>
+
